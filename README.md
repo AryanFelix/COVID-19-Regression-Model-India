@@ -1,24 +1,26 @@
-# COVID-19-Regression-Model-India
+# COVID-19 Regression Model (India)
  A polynomial regression model to predict the number of infections, recoveries and deaths on a particular day in the future. Currently predicion is based on the Indian dataset. Can be altered according to your prefered dataset. Steps for altering dataset will be present in the README file.
 
+## Changelog
+* ### v1.1.0
+    * Added auto-update for the dataset. Manual updation not required anymore.
+    * Updated README.md
+* ### v1.0.1
+    * Manually updated dataset.
+    * Added README.md and LICENSE.
+* ### v1.0.0
+    * Project created and uploaded onto GitHub
+
 ## Steps to run
-1. ### Install the following Python libraries
+1. ### Python libraries to be installed to run the program
     1. NumPy
-    ```
-    pip install numpy
-    ```
+
     2. MatPlotLib
-    ```
-    pip install matplotlib
-    ```
+
     3. Pandas
-    ```
-    pip install pandas
-    ```
+
     4. Sci-Kit Learn
-    ```
-    pip install sklearn
-    ```
+
 2. ### Run Covid19.py
     ### **NOTE**
     
@@ -26,15 +28,17 @@
     
     Do not enter the date. Please refer the dataset to understand better.
 
-## Steps to alter the dataset
-1. Download the latest dataset (case_time_series.csv) from the following link. You can replace this dataset with your own. Remeber to edit the python script and the dataframe values in the script accordingly.
+3. ### An older version of the dataset is provided for you to better understand the code.
+
+## Altering the dataset
+1. The current dataset updates automatially. No manual updation required. The link for the complete dataset is provided below. A huge thanks to covid19india.org for providing this awesome dataset.
 
     https://api.covid19india.org/csv/latest/case_time_series.csv
 
-2. If you are using the updated version of the same dataset then, 
-    * Create another column at the end called 'Day No'.
-    * Using Excel, fill in this column with values from 1 to latest day number. Since Excel has a QuickAnalyze feature, it can fill this entire column with just one click.
-3. Save and you're ready to go.
+2. If you wish to add your own dataset, then change the link and alter the dataframe slicing accordingly.
+
+3. Feedback and forking is encouraged.
 
 ## License
-### **© Aryan Felix**
+### **© MIT Licence**
+#### Created by Aryan Felix

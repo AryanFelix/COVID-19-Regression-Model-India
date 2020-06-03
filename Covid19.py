@@ -2,7 +2,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 
-ds = pd.read_csv('case_time_series.csv')
+ds = pd.read_csv('https://api.covid19india.org/csv/latest/case_time_series.csv')
+edits = []
+x = ds.iloc[:-1, -1].values
+for i in range(len(x)+1):
+    edits.append(i+1)
+ds = ds.assign(Day_No =  edits)
 x = ds.iloc[:-1, -1].values
 y = ds.iloc[:-1, 1].values
 yrec = ds.iloc[:-1, 3].values

@@ -2,12 +2,15 @@
  A polynomial regression model to predict the number of infections, recoveries and deaths on a particular day in the future. Currently predicion is based on the Indian dataset. Can be altered according to your prefered dataset. Steps for altering dataset will be present in the README file.
 
 ## Changelog
+* ### v1.2.0
+    * Updated main code with the changes in the `case_time_series.csv` dataset format.
+    * Updated `README.md`.
 * ### v1.1.0
     * Added auto-update for the dataset. Manual updation not required anymore.
-    * Updated README.md
+    * Updated `README.md`.
 * ### v1.0.1
     * Manually updated dataset.
-    * Added README.md and LICENSE.
+    * Added `README.md` and `LICENSE`.
 * ### v1.0.0
     * Project created and uploaded onto GitHub
 
@@ -21,7 +24,7 @@
 
     4. Sci-Kit Learn
 
-2. ### Run Covid19.py
+2. ### Run `Covid19.py`
     ### **NOTE**
     
     Please enter a whole number when prompted to enter a Day i.e. 1,2,3...n.
@@ -40,5 +43,5 @@
 3. Feedback and forking is encouraged.
 
 ## License
-### **© MIT Licence**
-#### Created by Aryan Felix
+### © MIT Licence
+### Created by Aryan Felix

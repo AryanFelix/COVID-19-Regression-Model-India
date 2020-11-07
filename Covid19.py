@@ -1,6 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
+from sklearn.preprocessing import PolynomialFeatures
+from sklearn.linear_model import LinearRegression
 
 ds = pd.read_csv('https://api.covid19india.org/csv/latest/case_time_series.csv')
 edits = []
@@ -9,13 +11,11 @@ for i in range(len(x)+1):
     edits.append(i+1)
 ds = ds.assign(Day_No =  edits)
 x = ds.iloc[:-1, -1].values
-y = ds.iloc[:-1, 1].values
-yrec = ds.iloc[:-1, 3].values
-ydec = ds.iloc[:-1, 5].values
+y = ds.iloc[:-1, 2].values
+yrec = ds.iloc[:-1, 4].values
+ydec = ds.iloc[:-1, 6].values
 x = np.reshape(x,(-1,1))
 
-from sklearn.preprocessing import PolynomialFeatures
-from sklearn.linear_model import LinearRegression
 polyreg = PolynomialFeatures(degree=4)
 x_poly = polyreg.fit_transform(x)
 linreg = LinearRegression()
@@ -33,7 +33,9 @@ plt.xlabel('Day')
 plt.ylabel('Cases')
 plt.show()
 
-xvalue = int(input("Enter Day for which infection numbers are to be predicted : "))
+print("\nCOVID-19 PREDICTOR\n")
+print("Yesterday was Day Number : {}".format(ds.iat[-1,-1]))
+xvalue = int(input("Enter Day Number for which COVID data is to be predicted : "))
 y1 = linreg.predict(polyreg.fit_transform([[xvalue]]))
 print("Predicted Infection = {}".format(y1))
 y2 = linreg2.predict(polyreg.fit_transform([[xvalue]]))

@@ -10,13 +10,13 @@ x = ds.iloc[:-1, -1].values
 for i in range(len(x)+1):
     edits.append(i+1)
 ds = ds.assign(Day_No =  edits)
-x = ds.iloc[:-1, -1].values
-y = ds.iloc[:-1, 2].values
-yrec = ds.iloc[:-1, 4].values
-ydec = ds.iloc[:-1, 6].values
+x = ds.iloc[-50:, -1].values
+y = ds.iloc[-50:, 2].values
+yrec = ds.iloc[-50:, 4].values
+ydec = ds.iloc[-50:, 6].values
 x = np.reshape(x,(-1,1))
 
-polyreg = PolynomialFeatures(degree=4)
+polyreg = PolynomialFeatures(degree = 2)
 x_poly = polyreg.fit_transform(x)
 linreg = LinearRegression()
 linreg.fit(x_poly,y)
